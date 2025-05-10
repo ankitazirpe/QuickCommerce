@@ -29,11 +29,11 @@ public class VendorController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(vendorService.RegisterVendor(vendrDto));
 	}
 	
-	@PostMapping("/login")
-	public ResponseEntity<?> Login(@RequestBody UserAuthDto user) {
-	
-		return vendorService.LoginVendor(user);
-	}
+//	@PostMapping("/login")
+//	public ResponseEntity<?> Login(@RequestBody UserAuthDto user) {
+//	
+//		return vendorService.LoginVendor(user);
+//	}
 	
 	@PutMapping("/update/{uId}")
 	public ResponseEntity<?> Update(@PathVariable Long uId,@RequestBody VendorReqDto user){

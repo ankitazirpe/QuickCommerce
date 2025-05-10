@@ -42,31 +42,31 @@ public class VendorServiceImpl implements VendorService {
 				.body(persistantVendor);
 	}
 
-	@Override
-	public ResponseEntity<?> LoginVendor(UserAuthDto vendor) {
-		
-		Optional<Vendor> vendorOpt = vendorDao.findByEmail(vendor.getEmail());
-		
-		if(vendorOpt.isEmpty()) {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-					.body(Map.of("error", "Invalid credentials", "message", "user not found"));
-		}
-		
-		Vendor v = vendorOpt.get();
-		
-		if(!vendor.getPassword().equals(v.getPassword())) {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-					.body(Map.of("error", "Invalid credentials", "message", "user not found"));
-		}
-		
-		VendorRespDto vendorResponse = mapper.map(v, VendorRespDto.class);
-		Map<String, Object> response = new HashMap<>();
-		response.put("message", "Login successfull");
-		response.put("role", v.getUserRole());
-		response.put("vendor", vendorResponse);
-		
-		return ResponseEntity.ok(response);
-	}
+//	@Override
+//	public ResponseEntity<?> LoginVendor(UserAuthDto vendor) {
+//		
+//		Optional<Vendor> vendorOpt = vendorDao.findByEmail(vendor.getEmail());
+//		
+//		if(vendorOpt.isEmpty()) {
+//			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+//					.body(Map.of("error", "Invalid credentials", "message", "user not found"));
+//		}
+//		
+//		Vendor v = vendorOpt.get();
+//		
+//		if(!vendor.getPassword().equals(v.getPassword())) {
+//			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+//					.body(Map.of("error", "Invalid credentials", "message", "user not found"));
+//		}
+//		
+//		VendorRespDto vendorResponse = mapper.map(v, VendorRespDto.class);
+//		Map<String, Object> response = new HashMap<>();
+//		response.put("message", "Login successfull");
+//		response.put("role", v.getUserRole());
+//		response.put("vendor", vendorResponse);
+//		
+//		return ResponseEntity.ok(response);
+//	}
 
 	@Override
 	public ResponseEntity<?> UpdateVendor(Long uId, VendorReqDto vendor) {

@@ -9,7 +9,7 @@ public interface UserService {
 	ResponseEntity<?> RegisterUser(UserReqDto user); 
 //	by mobile number
 	
-	ResponseEntity<?> LoginUser(UserAuthDto user);
+//	ResponseEntity<?> LoginUser(UserAuthDto user);
 	
 	ResponseEntity<?> UpdateUser(Long uId, UserReqDto user);
 	

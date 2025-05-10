@@ -8,7 +8,7 @@ import com.quickcomm.dto.VendorReqDto;
 public interface VendorService {
 	ResponseEntity<?> RegisterVendor(VendorReqDto user);
 	
-	ResponseEntity<?> LoginVendor(UserAuthDto vendor);
+//	ResponseEntity<?> LoginVendor(UserAuthDto vendor);
 	
 	ResponseEntity<?> UpdateVendor(Long uId, VendorReqDto vendor);
 }
