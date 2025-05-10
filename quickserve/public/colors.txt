@@ -1,0 +1,4 @@
+green shade : #15616d
+orange shade : #ff7d00
+green : #0a9396
+pink: #9e0059
